@@ -40,7 +40,7 @@ class wxmessage():
 		response = urllib2.urlopen(req)
 		self.the_page = response.read()
 		self.decode_page= json.loads(self.the_page) 
-		print self.decode_page
+		print(self.decode_page)
 
 if len(sys.argv) == 2:
     content = sys.argv[1]
