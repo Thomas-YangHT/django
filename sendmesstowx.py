@@ -17,12 +17,12 @@ class wxmessage():
 		req = urllib2.Request(self.url_get) 
 		response = urllib2.urlopen(req) 
 		self.the_page = response.read()	
-		print self.the_page
+		print(self.the_page)
 		self.decode_page= json.loads(self.the_page)
-		print self.decode_page['access_token']
+		print(self.decode_page['access_token'])
 	def sendwxmess(self):
 		self.url_post += self.decode_page['access_token']
-		print self.url_post
+		print(self.url_post)
 		values = {
 			"touser": "@all",
 			"toparty": " PartyID1 | PartyID2 ",
@@ -35,7 +35,7 @@ class wxmessage():
 			"safe":"0",
 		} 
 		postdata = json.dumps(values).encode('UTF-8')
-		print "postdate:" + postdata
+		print("postdate:" + postdata)
 		req = urllib2.Request(self.url_post, postdata) 
 		response = urllib2.urlopen(req)
 		self.the_page = response.read()
@@ -52,7 +52,3 @@ if content != None :
 	wx = wxmessage()
 	wx.getwxtokey()
 	wx.sendwxmess()
-
-
-
-	
