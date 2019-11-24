@@ -14,7 +14,6 @@ jobs:
         MY_VAR: Hi there! My name is
       run: |
         echo $MY_VAR
-        cd django
         docker build -t 192.168.31.140:5000/python -f ./dockerfile.django.gitlab-runner .    
         docker push 192.168.31.140:5000/python
         sh ./docker-run.sh
