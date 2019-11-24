@@ -1,4 +1,4 @@
-name: Test for actions runner
+name: Test for actions runner baseed on python 2.7
 
 on: push
 
