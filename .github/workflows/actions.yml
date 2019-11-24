@@ -25,8 +25,8 @@ jobs:
     - name: failed
       if: failure()
       run: |
-        python sendmesstowx.py "build failed: https://github.com/Thomas-YangHT/django/edit/master/.github/workflows/actions.yml"
+        cd django && python sendmesstowx.py "build failed: https://github.com/Thomas-YangHT/django/edit/master/.github/workflows/actions.yml"
     - name: successed
       if: success()
       run: |
-        python sendmesstowx.py "build successed"
+        cd django && python sendmesstowx.py "build successed"
