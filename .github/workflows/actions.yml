@@ -9,6 +9,10 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@master
+    - name: Test with pytest
+      run: |
+        pip install pytest
+        pytest
     - name: build
       env:
         MY_VAR: Hi there! My name is
